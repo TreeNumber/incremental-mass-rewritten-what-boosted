@@ -542,7 +542,7 @@ const BUILDINGS_DATA = {
         effect(x) {
             let t = x
             t = t.mul(tmp.radiation.bs.eff[10])
-            let pow = E(2)
+            let pow = E(12.5)
             if (player.mainUpg.atom.includes(4)) pow = pow.add(tmp.upgs.main?tmp.upgs.main[3][4].effect:E(0))
             if (player.mainUpg.atom.includes(11)) pow = pow.mul(tmp.upgs.main?tmp.upgs.main[3][11].effect:E(1))
             if (hasTree("gr1")) pow = pow.mul(tmp.supernova.tree_eff.gr1)
@@ -615,7 +615,7 @@ const BUILDINGS_DATA = {
         get_cost: x => format(x,0) + " Quark",
 
         effect(x) {
-            let pow = E(2), a22 = hasUpgrade('atom',22)
+            let pow = E(10), a22 = hasUpgrade('atom',22)
 
             if (hasElement(57)) pow = pow.mul(tmp.elements.effect[57])
             if (hasUpgrade('br',5)) pow = pow.mul(upgEffect(4,5))
@@ -667,7 +667,7 @@ const BUILDINGS_DATA = {
         get_cost: x => format(x,0) + " Quantum Foam",
 
         effect(x) {
-            let pow = E(2)
+            let pow = E(10)
             if (hasTree('qu6')) pow = pow.mul(treeEff('qu6'))
             pow = pow.mul(tmp.dark.abEff.csp||1)
             pow = pow.pow(exoticAEff(1,3))
