@@ -47,6 +47,9 @@ const FORMS = {
     massGain() {
         let x = E(1)
         x = x.add(BUILDINGS.eff('mass_1'))
+	if (player.mass.gte(1) && player.inf.theorem.lt(1)) x = x.mul(player.mass.log(20).plus(1))
+	if (player.ranks.rank.gte(1)) x = x.mul(player.ranks.rank.mul(0.75).add(1))
+	if (player.ranks.tier.gte(1)) x = x.mul(player.ranks.tier.add(1).pow(2.5))
         if (player.ranks.rank.gte(6)) x = x.mul(RANKS.effect.rank[6]())
         if (player.ranks.rank.gte(13)) x = x.mul(3)
         if (player.mainUpg.bh.includes(10)) x = x.mul(tmp.upgs.main?tmp.upgs.main[2][10].effect:E(1))
