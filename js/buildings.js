@@ -412,7 +412,7 @@ const BUILDINGS_DATA = {
         effect(x) {
             let t = x
             t = t.mul(tmp.radiation.bs.eff[5])
-            let pow = E(2)
+            let pow = E(100)
                 pow = pow.add(tmp.chal.eff[6])
                 if (player.mainUpg.bh.includes(2)) pow = pow.mul(tmp.upgs.main?tmp.upgs.main[2][2].effect:E(1))
                 pow = pow.add(tmp.atom.particles[2].powerEffect.eff2)
