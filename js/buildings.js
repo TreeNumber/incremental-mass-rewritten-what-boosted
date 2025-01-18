@@ -266,7 +266,7 @@ const BUILDINGS_DATA = {
             t = t.mul(tmp.prim.eff[1][1])
             t = t.mul(tmp.radiation.bs.eff[1])
 
-            step = E(1.5)
+            step = E(2.25)
             step = step.add(tmp.chal.eff[6])
             step = step.add(tmp.chal.eff[2])
             step = step.add(tmp.atom.particles[0].powerEffect.eff2)
