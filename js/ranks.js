@@ -235,6 +235,7 @@ const RANKS = {
     },
     effDesc: {
         rank: {
+            1(x) { return format(x)+"x" },
             3(x) { return "+"+format(x) },
             5(x) { return "+"+format(x) },
             6(x) { return format(x)+"x" },
