@@ -67,7 +67,7 @@ const RANKS = {
     },
     desc: {
         rank: {
-            '1': "unlock mass upgrade 1.",
+            '1': "unlock mass upgrade 1. And Mass Pow X2",
             '2': "unlock mass upgrade 2, reduce mass upgrade 1 scaling by 20%.",
             '3': "unlock mass upgrade 3, reduce mass upgrade 2 scaling by 20%, and mass upgrade 1 boosts itself.",
             '4': "reduce mass upgrade 3 scaling by 20%.",
@@ -131,6 +131,10 @@ const RANKS = {
     },
     effect: {
         rank: {
+            '1'() {
+                let ret = player.ranks.rank.pow(2)
+                return ret
+            }
             '3'() {
                 let ret = player.build.mass_1.amt.div(20)
                 return ret
